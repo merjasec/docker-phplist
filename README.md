@@ -16,8 +16,6 @@ docker run --name=my-merjasec-phplist \
     merjasec/phplist:latest
 ```
 
-# docker-phplist
-Docker image for the mailing list phplist (3.3.3) based on ubuntu 18.04 with php7.2, apache, mariadb and postfix. https://www.phplist.org
-
 Go to http://localhost:8080/lists/admin to setup phplist
 
+https://hub.docker.com/r/merjasec/phplist/
