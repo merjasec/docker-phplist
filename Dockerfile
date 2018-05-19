@@ -13,7 +13,7 @@ RUN echo $TZ > /etc/timezone && \
 
 RUN apt-get -y install joe nmap vim 
 
-RUN apt-get -y install apache2 php7.2 libapache2-mod-php7.2  php7.2-mysql php7.2-zip mariadb-server mariadb-client
+RUN apt-get -y install apache2 php7.2 libapache2-mod-php7.2  php7.2-mysql php7.2-zip php7.2-curl php7.2-imap php7.2-curl php7.2-mbstring php7.2-xml php7.2-json php7.2-gd mariadb-server mariadb-client
 
 RUN apt-get install -y syslog-ng
 
