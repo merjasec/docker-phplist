@@ -15,7 +15,7 @@ echo $TZ > /etc/timezone && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata 
 
-
+echo "myhostname = $HOSTNAME" >> /etc/postfix/main.cf
 
 if [ ! -d /var/lib/mysql/mysql ]
 then
@@ -62,3 +62,5 @@ then
 
 	mkdir -p /var/www/html/lists/uploads && chmod +777 /var/www/html/lists/uploads
 fi
+
+/usr/bin/newaliases

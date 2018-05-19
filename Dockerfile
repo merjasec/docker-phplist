@@ -18,9 +18,9 @@ RUN apt-get -y install apache2 php7.2 libapache2-mod-php7.2  php7.2-mysql php7.2
 RUN apt-get install -y syslog-ng
 
 RUN echo "postfix postfix/main_mailer_type string Internet site" > preseed.txt
-RUN echo "postfix postfix/mailname string $HOSTNAME" >> preseed.txt
 RUN debconf-set-selections preseed.txt
 RUN apt-get -y install postfix
+COPY files/main.cf /etc/postfix/main.cf
 
 RUN apt-get clean
 
