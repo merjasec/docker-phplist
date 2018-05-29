@@ -1,0 +1,2 @@
+0-59/5 * * * * /phplist.sh -pprocessqueue > /dev/null 2>&1
+0 3 * * * /phplist.sh -pprocessbounces > /dev/null 2>&1

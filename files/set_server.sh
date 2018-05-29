@@ -63,4 +63,11 @@ then
 	mkdir -p /var/www/html/lists/uploads && chmod +777 /var/www/html/lists/uploads
 fi
 
+if [ ! -f /var/spool/cron/crontabs/root ]
+then
+        echo "Setting default crontab"
+        /usr/bin/crontab -u root /crontab.default
+fi
+
+
 /usr/bin/newaliases
