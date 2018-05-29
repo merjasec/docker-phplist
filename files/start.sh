@@ -6,5 +6,6 @@
 /usr/sbin/service mysql start
 /usr/sbin/service apache2 start
 /usr/sbin/service postfix start
+/usr/sbin/service cron start
 
 /bin/bash
