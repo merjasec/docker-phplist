@@ -41,7 +41,7 @@ sed -i 's/DirectoryIndex\ /DirectoryIndex\ index.php\ /g' /etc/apache2/mods-enab
 
 if [ ! -d /var/www/html/lists ]
 then
-	# wget https://sourceforge.net/projects/phplist/files/phplist/3.3.3/phplist-3.3.3.tgz/download -O phplist-3.3.3.tgz
+	# wget https://sourceforge.net/projects/phplist/files/phplist/$PHPLISTVER/phplist-$PHPLISTVER.tgz/download -O phplist-$PHPLISTVER.tgz
 	cd / && tar xvfz /phplist-$PHPLISTVER.tgz
 	mv /phplist-$PHPLISTVER/public_html/lists /var/www/html/lists
 
