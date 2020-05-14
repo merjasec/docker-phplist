@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PHPLISTVER="3.3.3"
+PHPLISTVER="3.5.3"
 
 if [ -z $MYSQLUSER ]; then MYSQLUSER="phplist"; fi
 if [ -z $MYSQPASS ]; then MYSQLPASS="phplist"; fi

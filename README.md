@@ -1,5 +1,5 @@
 # docker-phplist
-Docker image for the mailing list phplist (3.3.6) based on ubuntu 18.04 with php7.2, apache, mariadb and postfix. https://www.phplist.org
+Docker image for the mailing list phplist (3.5.3) based on ubuntu 20.04 with php7.4, apache, mariadb and postfix. https://www.phplist.org
 
 # Usage:
 ```sh

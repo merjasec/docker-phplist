@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 MAINTAINER Gasper Furman <gasper.furman@gf.si>
 
@@ -13,7 +13,7 @@ RUN echo $TZ > /etc/timezone && \
 
 RUN apt-get -y install joe nmap vim 
 
-RUN apt-get -y install apache2 php7.2 libapache2-mod-php7.2  php7.2-mysql php7.2-zip php7.2-curl php7.2-imap php7.2-curl php7.2-mbstring php7.2-xml php7.2-json php7.2-gd mariadb-server mariadb-client
+RUN apt-get -y install apache2 php7.4 libapache2-mod-php7.4  php7.4-mysql php7.4-zip php7.4-curl php7.4-imap php7.4-curl php7.4-mbstring php7.4-xml php7.4-json php7.4-gd mariadb-server mariadb-client
 
 RUN apt-get install -y syslog-ng
 
