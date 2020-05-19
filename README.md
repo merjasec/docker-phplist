@@ -10,6 +10,7 @@ docker run --name=my-merjasec-phplist \
     -p 8080:80 \
     -v /home/list/phplist/html:/var/www/html \
     -v /home/list/phplist/mysql:/var/lib/mysql \
+    -v /home/list/phplist/backup:/backup \
     -e "MYSQLUSER=phplist" -e "MYSQLPASS=phplist" -e "MYSQLDB=phplist" \
     -e "MYSQLROOTPASS=Pa5sw0rd" \
     -e "LANG=sl" \
