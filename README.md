@@ -18,4 +18,11 @@ docker run --name=my-merjasec-phplist \
 
 Go to http://localhost:8080/lists/admin to setup phplist
 
+# Upgrade: 
+```sh
+docker exec -it my-merjasec-phplist /upgrade.sh
+```
+
+Go to http://localhost:8080/lists/admin to complete the upgrade process
+
 https://hub.docker.com/r/merjasec/phplist/
