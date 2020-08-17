@@ -5,7 +5,7 @@
 /usr/sbin/service syslog-ng start
 /usr/sbin/service mysql start
 
-/usr/bin/mysqlcheck -c  -u root -p --all-databases
+/usr/bin/mysqlcheck -c -u root --all-databases
 
 /usr/sbin/service apache2 start
 /usr/sbin/service postfix start
