@@ -27,3 +27,4 @@ docker exec -it my-merjasec-phplist /upgrade.sh
 Go to http://localhost:8080/lists/admin to complete the upgrade process
 
 https://hub.docker.com/r/merjasec/phplist/
+
