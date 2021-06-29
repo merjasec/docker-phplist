@@ -1,5 +1,5 @@
 # docker-phplist
-Docker image for the mailing list phplist (3.5.8) based on ubuntu 20.04 with php7.4, apache, mariadb and postfix. https://www.phplist.org
+Docker image for the mailing list phplist (3.6.3) based on ubuntu 20.04 with php7.4, apache, mariadb and postfix. https://www.phplist.org
 
 # Usage:
 ```sh
@@ -12,7 +12,7 @@ docker run --name=my-merjasec-phplist \
     -v /home/list/phplist/mysql:/var/lib/mysql \
     -v /home/list/phplist/backup:/backup \
     -e "MYSQLUSER=phplist" -e "MYSQLPASS=phplist" -e "MYSQLDB=phplist" \
-    -e "MYSQLROOTPASS=Pa5sw0rd" \
+    -e "MYSQLHOST=localhost" -e "MYSQLROOTPASS=Pa5sw0rd" \
     -e "LANG=sl" \
     merjasec/phplist:latest
 ```

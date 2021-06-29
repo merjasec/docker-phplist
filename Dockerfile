@@ -11,7 +11,7 @@ RUN echo $TZ > /etc/timezone && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata 
 
-RUN apt-get -y install joe nmap vim 
+RUN apt-get -y install joe nmap vim apt-utils
 
 RUN apt-get -y install apache2 php7.4 libapache2-mod-php7.4  php7.4-mysql php7.4-zip php7.4-curl php7.4-imap php7.4-curl php7.4-mbstring php7.4-xml php7.4-json php7.4-gd mariadb-server mariadb-client
 

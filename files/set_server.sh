@@ -1,7 +1,8 @@
 #!/bin/bash
 
-PHPLISTVER="3.5.8"
+PHPLISTVER="3.6.3"
 
+if [ -z $MYSQLHOST ]; then MYSQLHOST="localhost"; fi
 if [ -z $MYSQLUSER ]; then MYSQLUSER="phplist"; fi
 if [ -z $MYSQPASS ]; then MYSQLPASS="phplist"; fi
 if [ -z $MYSQLDB ]; then MYSQLDB="phplist"; fi
@@ -47,6 +48,7 @@ then
 
 
 	#config.php
+ 	sed -i 's/$database_host/$database_host="'$MYSQLHOST'";#/g' /var/www/html/lists/config/config.php
 	sed -i 's/$database_user/$database_user="'$MYSQLUSER'";#/g' /var/www/html/lists/config/config.php
 	sed -i 's/$database_name/$database_name="'$MYSQLDB'";#/g' /var/www/html/lists/config/config.php
 	sed -i 's/$database_password/$database_password="'$MYSQLPASS'";#/g' /var/www/html/lists/config/config.php
