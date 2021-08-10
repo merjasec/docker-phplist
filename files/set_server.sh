@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PHPLISTVER="3.6.3"
+PHPLISTVER="3.6.4"
 
 if [ -z $MYSQLHOST ]; then MYSQLHOST="localhost"; fi
 if [ -z $MYSQLUSER ]; then MYSQLUSER="phplist"; fi
