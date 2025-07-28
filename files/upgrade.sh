@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PHPLISTVER="3.6.15"
+PHPLISTVER="3.6.16"
 
 if [ -d /var/www/html/lists ]
 then
