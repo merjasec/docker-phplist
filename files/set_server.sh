@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PHPLISTVER="3.6.16"
+PHPLISTVER="3.6.17"
 
 if [ -z $MYSQLHOST ]; then MYSQLHOST="localhost"; fi
 if [ -z $MYSQLUSER ]; then MYSQLUSER="phplist"; fi
@@ -20,14 +20,14 @@ echo "myhostname = $HOSTNAME" >> /etc/postfix/main.cf
 
 if [ ! -d /var/lib/mysql/mysql ]
 then
-        echo "missing mysql data. installing mysql init db"
-        /usr/bin/mysql_install_db
+        echo "missing mysql data. installing mariadb init db"
+        /usr/bin/mariadb_install_db
 
-        /usr/sbin/service mysql start
+        /usr/sbin/service mariadb start
         
-        echo "GRANT ALL PRIVILEGES ON phplist.* TO '$MYSQLUSER'@'localhost' IDENTIFIED BY '$MYSQLPASS';" | /usr/bin/mysql
+        echo "GRANT ALL PRIVILEGES ON phplist.* TO '$MYSQLUSER'@'localhost' IDENTIFIED BY '$MYSQLPASS';" | /usr/bin/mariadb
 
-	echo "CREATE DATABASE IF NOT EXISTS $MYSQLDB /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;" | /usr/bin/mysql
+	echo "CREATE DATABASE IF NOT EXISTS $MYSQLDB /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;" | /usr/bin/mariadb
 
 fi
 

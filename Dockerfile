@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:26.04
 
 MAINTAINER Gasper Furman <gasper.furman@gf.si>
 
@@ -13,7 +13,23 @@ RUN echo $TZ > /etc/timezone && \
 
 RUN apt-get -y install joe nmap vim apt-utils
 
-RUN apt-get -y install apache2 php7.4 libapache2-mod-php7.4  php7.4-mysql php7.4-zip php7.4-curl php7.4-imap php7.4-curl php7.4-mbstring php7.4-xml php7.4-json php7.4-gd mariadb-server mariadb-client
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends ca-certificates curl \
+ && curl -sSLo /tmp/debsuryorg-archive-keyring.deb https://packages.sury.org/debsuryorg-archive-keyring.deb \
+ && dpkg -i /tmp/debsuryorg-archive-keyring.deb \
+ && rm /tmp/debsuryorg-archive-keyring.deb \
+ && . /etc/os-release \
+ && printf '%s\n' \
+      'Types: deb' \
+      'URIs: https://packages.sury.org/php/' \
+      "Suites: ${VERSION_CODENAME}" \
+      'Components: main' \
+      'Signed-By: /usr/share/keyrings/debsuryorg-archive-keyring.gpg' \
+      > /etc/apt/sources.list.d/sury-php.sources \
+ && apt-get update
+ 
+#RUN apt-get -y install apache2 php7.4 libapache2-mod-php7.4  php7.4-mysql php7.4-zip php7.4-curl php7.4-imap php7.4-curl php7.4-mbstring php7.4-xml php7.4-json php7.4-gd mariadb-server mariadb-client
+RUN apt-get -y install apache2 php8.5 libapache2-mod-php8.5 php8.5-mysql php8.5-zip php8.5-curl php8.5-xml php8.5-mbstring  php8.5-gd php8.5-curl mariadb-server mariadb-client
 
 RUN apt-get install -y syslog-ng
 
