@@ -1,5 +1,5 @@
 # docker-phplist
-Docker image for the mailing list phplist (3.6.17) based on ubuntu 26.04 with php8.5.12, apache, mariadb and postfix. https://www.phplist.org
+Docker image for the mailing list phplist (3.7.0) based on ubuntu 26.04 with php8.5.12, apache, mariadb and postfix. https://www.phplist.org
 
 # Usage:
 ```sh
@@ -9,7 +9,7 @@ docker run --name=my-merjasec-phplist \
     -h list.gf.si \
     -p 8080:80 \
     -v /home/list/phplist/html:/var/www/html \
-    -v /home/list/phplist/mysql:/var/lib/mysql \
+    -v /home/list/phplist/mariadb:/var/lib/mariadb \
     -v /home/list/phplist/backup:/backup \
     -e "MYSQLUSER=phplist" -e "MYSQLPASS=phplist" -e "MYSQLDB=phplist" \
     -e "MYSQLHOST=localhost" -e "MYSQLROOTPASS=Pa5sw0rd" \

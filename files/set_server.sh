@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PHPLISTVER="3.6.17"
+PHPLISTVER="3.7.0"
 
 if [ -z $MYSQLHOST ]; then MYSQLHOST="localhost"; fi
 if [ -z $MYSQLUSER ]; then MYSQLUSER="phplist"; fi
@@ -18,10 +18,10 @@ echo $TZ > /etc/timezone && \
 
 echo "myhostname = $HOSTNAME" >> /etc/postfix/main.cf
 
-if [ ! -d /var/lib/mysql/mysql ]
+if  [ ! -d /var/lib/mysql/mariadb ]
 then
         echo "missing mysql data. installing mariadb init db"
-        /usr/bin/mariadb_install_db
+        /usr/bin/mariadb-install-db
 
         /usr/sbin/service mariadb start
         
